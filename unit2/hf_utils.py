@@ -9,6 +9,8 @@ import random
 import imageio
 import pickle5 as pickle
 
+from qlearning import evaluate_agent
+
 
 def record_video(env, Qtable, out_directory, fps=1):
   """
@@ -48,6 +50,7 @@ def push_to_hub(repo_id, model, env, video_fps=1, local_repo_path="hub"):
     :param local_repo_path: where the local repository is
     """
     _, repo_name = repo_id.split("/")
+    env_id = model.get("env_id")
 
     eval_env = env
     api = HfApi()

@@ -33,7 +33,7 @@ print("Action Space Sample", env.action_space.sample()) # Take a random action
 
 # +
 # Train our agent
-import qlearning as ql
+from . import qlearning as ql
 import gymnasium as gym
 import numpy as np
 
@@ -67,7 +67,7 @@ print(f"Mean_reward={mean_reward:.2f} +/- {std_reward:.2f}")
 # # Publish to the Hub
 
 # +
-from ..hf_utils import push_to_hub
+from .hf_utils import push_to_hub
 
 username = "monti-python"
 repo_name = "q-FrozenLake-v1-4x4-noSlippery"
