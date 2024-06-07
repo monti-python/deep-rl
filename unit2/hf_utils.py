@@ -1,4 +1,4 @@
-from huggingface_hub import HfApi, snapshot_download
+from huggingface_hub import HfApi, snapshot_download, hf_hub_download
 from huggingface_hub.repocard import metadata_eval_result, metadata_save
 
 from pathlib import Path
@@ -159,5 +159,22 @@ def push_to_hub(repo_id, model, env, video_fps=1, local_repo_path="hub"):
         folder_path=repo_local_path,
         path_in_repo=".",
     )
-
     print("Your model is pushed to the Hub. You can view your model here: ", repo_url)
+
+
+def load_from_hub(repo_id: str, filename: str) -> str:
+    """
+    Download a model from Hugging Face Hub.
+    :param repo_id: id of the model repository from the Hugging Face Hub
+    :param filename: name of the model zip file from the repository
+    """
+    # Get the model from the Hub, download and cache the model on your local disk
+    pickle_model = hf_hub_download(
+        repo_id=repo_id,
+        filename=filename
+    )
+
+    with open(pickle_model, 'rb') as f:
+      downloaded_model_file = pickle.load(f)
+
+    return downloaded_model_file
