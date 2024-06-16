@@ -164,6 +164,10 @@ cython_debug/
 # Ignore videos
 video
 
+# Ingore HuggingFace Hub temporary folders and logs
+hub
+logs
+
 # Ignore notebooks (use jupytext instead)
 *.ipynb
 
