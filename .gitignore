@@ -173,3 +173,6 @@ logs
 
 # Ignore zip files
 *.zip
+
+# Ignore pickles
+*.pt
