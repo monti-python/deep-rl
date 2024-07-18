@@ -1,7 +1,7 @@
 import numpy as np
 from collections import deque
 # Gym
-import gym
+import gymnasium as gym
 # PyTorch
 import torch
 import torch.nn as nn

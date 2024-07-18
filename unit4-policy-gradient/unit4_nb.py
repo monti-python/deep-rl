@@ -15,7 +15,7 @@
 # # Train CartPole Policy
 
 # +
-import gym
+import gymnasium as gym
 from policy_gradient import train, evaluate_agent
 
 env_id = "CartPole-v1"
@@ -67,10 +67,10 @@ push_to_hub(
 # # Train PixelCopter Policy
 
 # +
-import gymnasium
+import gymnasium as gym
 
 env_id = "Pixelcopter-PLE-v0"
-env = gymnasium.make("GymV21Environment-v0", env_id=env_id)
+env = gym.make("GymV21Environment-v0", env_id=env_id)
 
 pixelcopter_hyperparameters = {
     "state_space": int(env.observation_space.shape[0]),
@@ -87,7 +87,7 @@ pixelcopter_hyperparameters = {
 
 policy, scores = train(env, **pixelcopter_hyperparameters)
 # Evaluate agent
-eval_env = gymnasium.make("GymV21Environment-v0", env_id=env_id, render_mode="rgb_array")
+eval_env = gym.make("GymV21Environment-v0", env_id=env_id, render_mode="rgb_array")
 evaluate_agent(
     eval_env,
     pixelcopter_hyperparameters["max_t"],
