@@ -176,6 +176,7 @@ logs
 
 # Ignore pickles
 *.pt
+*.pkl
 
 # Ignore ml-agents repo
 ml-agents
