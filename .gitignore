@@ -180,3 +180,6 @@ logs
 
 # Ignore ml-agents repo
 ml-agents
+
+# Ignore runs info
+runs
