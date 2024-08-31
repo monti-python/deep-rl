@@ -1,0 +1,4 @@
+gym==0.22
+imageio-ffmpeg
+huggingface_hub
+gym[box2d]==0.22
