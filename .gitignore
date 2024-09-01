@@ -183,3 +183,4 @@ ml-agents
 
 # Ignore runs info
 runs
+train_dir
